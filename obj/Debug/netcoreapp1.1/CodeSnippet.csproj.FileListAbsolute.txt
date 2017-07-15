@@ -1,0 +1,8 @@
+C:\Users\Molle\CodeCamp\CodeSnippet\bin\Debug\netcoreapp1.1\CodeSnippet.deps.json
+C:\Users\Molle\CodeCamp\CodeSnippet\bin\Debug\netcoreapp1.1\CodeSnippet.runtimeconfig.json
+C:\Users\Molle\CodeCamp\CodeSnippet\bin\Debug\netcoreapp1.1\CodeSnippet.runtimeconfig.dev.json
+C:\Users\Molle\CodeCamp\CodeSnippet\bin\Debug\netcoreapp1.1\CodeSnippet.dll
+C:\Users\Molle\CodeCamp\CodeSnippet\bin\Debug\netcoreapp1.1\CodeSnippet.pdb
+C:\Users\Molle\CodeCamp\CodeSnippet\obj\Debug\netcoreapp1.1\CodeSnippet.AssemblyInfo.cs
+C:\Users\Molle\CodeCamp\CodeSnippet\obj\Debug\netcoreapp1.1\CodeSnippet.dll
+C:\Users\Molle\CodeCamp\CodeSnippet\obj\Debug\netcoreapp1.1\CodeSnippet.pdb

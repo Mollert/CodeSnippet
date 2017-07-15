@@ -1,1 +1,1 @@
-# CodeSnippet
+Just set-up the Visual Studio Code
