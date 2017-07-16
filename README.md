@@ -1,1 +1,1 @@
-Just set-up the Visual Studio Code
+The code runs using the Coffee App as a guide

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SnippetApp.Models;
 
 namespace CodeSnippet
 {
@@ -14,6 +15,10 @@ namespace CodeSnippet
     {
         public Startup(IHostingEnvironment env)
         {
+            using (var client = new MyDbContext()) {
+                client.Database.EnsureCreated();
+            }
+            
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -27,6 +32,8 @@ namespace CodeSnippet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddEntityFrameworkSqlite().AddDbContext<MyDbContext>();
+
             // Add framework services.
             services.AddMvc();
         }
@@ -55,6 +62,19 @@ namespace CodeSnippet
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // seed data. this is not how we would typically do this, but
+            // we just need some data for demonstration purposes
+            var db = new MyDbContext();
+            if (!db.Snippets.Any()) {
+                var snippets = new List<Snippet>() {
+                    new Snippet() { ID = 1, Title = "Div's for Life", Description = "Shows what a div looks like", ProgrammingLanguage = "HTML", CodeSnippet = "<div>Hello>/div>"},
+                    new Snippet() { ID = 2, Title = "C# varible", Description = "Shows what a C# variable looks like", ProgrammingLanguage = "C#", CodeSnippet = "public int . . ."},
+                };
+
+                db.Snippets.AddRange(snippets);
+                db.SaveChanges();
+            }
         }
     }
 }
