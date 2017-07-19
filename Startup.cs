@@ -51,7 +51,7 @@ namespace CodeSnippet
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Snippets/Error");
             }
 
             app.UseStaticFiles();
@@ -60,7 +60,7 @@ namespace CodeSnippet
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Snippets}/{action=Index}/{id?}");
             });
 
             // seed data. this is not how we would typically do this, but

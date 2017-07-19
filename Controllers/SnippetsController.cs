@@ -142,5 +142,10 @@ namespace SnippetApp.Controllers
         {
             return _context.Snippets.Any(e => e.ID == id);
         }
+
+        public IActionResult Error()
+        {
+            return View();
+        }       
     }
 }
